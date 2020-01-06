@@ -1,0 +1,21 @@
+<app-navbarcomponent></app-navbarcomponent>
+<div class="container mt-3">
+  <div class="row">
+    <div class="card" style="width: 20rem;">
+      <img class="card-img-top" [src]="employee.imgPath"  alt="loading">
+      <div class="card-body">
+        <h5 class="card-title"><a href="#" style="text-decoration: none;color:black">{{employee.name}}</a></h5>
+        <h6>Employee ID : {{employee.empId}} </h6>
+        <h6>Joined on: {{employee.joined_on}} </h6>
+        <h6>DOB : {{employee.DOB}}</h6>
+        <h6>email address : {{employee.email_address}}</h6>
+        <h6>Designation : {{employee.Designation}} </h6>
+      </div>
+    </div>
+  </div>
+  <br/>
+  <div class="row " >
+    <button type="button"  (click)="redirectToEditpage(employee.empId)" class="btn btn-primary">Edit</button>
+    <button type="button"  (click)="deleteRecord(employee.empId)" class="btn btn-primary ml-5">Delete</button>
+  </div>
+</div>

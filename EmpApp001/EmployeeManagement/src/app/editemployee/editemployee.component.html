@@ -1,0 +1,91 @@
+<app-navbarcomponent></app-navbarcomponent>
+<div class="card m-3">
+    <div class="card-header">Edit Employee Info</div>
+    <div class="card-body">
+      <form [formGroup]="editEmployee" (ngSubmit)="onSubmit()" > 
+          <span *ngIf="!editEmployee.valid && clicked"> Please fill all fields in form </span>
+        <div class="form-group row">
+          <div class="form-group col-2">
+            <label>Title</label>
+            <select formControlName="title" class="form-control col-6">
+              <option value="Mr">Mr</option>
+              <option value="Mrs">Mrs</option>
+              <option value="Miss">Miss</option>
+              <option value="Ms">Ms</option>
+            </select>
+          </div>
+          <div class="form-group col-5">
+            <label>First Name</label>
+            <input type="text" formControlName="firstName" class="form-control col-6" />
+            <div class="invalid-feedback">
+                <!-- <div *ngIf="firstName.invalid && (firstName.touched || firstName.dirty) && firstName!==''">First Name is required</div> -->
+            </div>
+          </div>
+          <div class="form-group col-5">
+            <label>Middle Name</label>
+            <input type="text" formControlName="middleName" class="form-control col-6">
+            <div class="invalid-feedback">
+                <!-- <div >First Name is required</div> -->
+            </div>
+          </div>
+          </div>
+          <div class="form-group row">        
+            <div class="form-group col-6">
+              <label>Last Name</label>
+              <input type="text" formControlName="lastName" class="form-control col-6"  />
+              <div  class="invalid-feedback">
+                  <!-- <div>Last Name is required</div> -->
+              </div>
+              </div>
+              <div class="form-group col-6">
+                <label>Employee ID</label>
+                <input type="number" formControlName="empId" class="form-control col-6" />
+                <div  class="invalid-feedback">
+                    <!-- <div>Last Name is required</div> -->
+                </div>
+              </div>
+          </div>
+          <div class="form-group row">  
+            <div class="form-group col-6">
+              <label>Joined on </label>
+              <input id="Joinedon" formControlName="Joinedon" name="dateOfBirth"
+              type="text" bsDatepicker class="form-control col-6" [maxDate]="JoinedonMaxdate" />
+              <div  class="invalid-feedback">
+                  <!-- <div>Last Name is required</div> -->
+              </div>
+            </div>
+            <div class="form-group col-6">
+              <label>Date Of Birth </label>
+              <input id="DOB" formControlName="DOB" name="dateOfBirth"
+              type="text" bsDatepicker class="form-control col-6"  [minDate]="DOBminDate"
+              [maxDate]="DOBmaxDate" />
+              <div  class="invalid-feedback">
+                  <!-- <div>Last Name is required</div> -->
+              </div>
+            </div>
+          </div>  
+          <div class="form-group row">  
+            <div class="form-group col-6">
+              <label>Email address</label>
+              <input type="email" formControlName="email" class="form-control col-6"/>
+              <div class="invalid-feedback">
+                  <!-- <div >First Name is required</div> -->
+              </div>
+            </div>
+            <div class="form-group col-6">
+              <label>Designation</label>
+              <input type="text" formControlName="designation" class="form-control col-6"/>
+              <div class="invalid-feedback">
+                  <!-- <div >First Name is required</div> -->
+              </div>
+            </div>
+          </div>
+        <button type="submit" [disabled]="!editEmployee.valid" class="btn btn-primary" >Submit</button>
+        
+      </form>
+    </div>
+  
+    <!-- <p>
+      Form Status: {{ addingEmployee.status }}
+    </p> -->
+  </div>

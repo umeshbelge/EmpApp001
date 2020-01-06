@@ -1,0 +1,7 @@
+<form [formGroup]="resetPwdForm" (ngSubmit)="onSubmit()">
+  <div class="form-group col-3">
+    <label> email </label>
+    <input type="text" formControlName="email" class="form-control">
+  </div>
+  <button type="submit" [disabled]="!resetPwdForm.valid" class="btn btn-primary" >Submit</button>
+</form>

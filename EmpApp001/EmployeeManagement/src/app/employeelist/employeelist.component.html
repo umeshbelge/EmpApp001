@@ -1,0 +1,26 @@
+<app-navbarcomponent></app-navbarcomponent>
+<div class="container mt-4 ml-2">
+  <h5>Employee List</h5>
+  <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email address</th>
+        <th>Designation</th>
+        <th>joined_on</th>
+        <th>DOB</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of emplist">
+        <td>{{ emp.empId }}</td>
+        <td><a [routerLink]="[emp.empId]">{{ emp.name }}</a></td>
+        <td>{{ emp.email_address }}</td>
+        <td>{{ emp.Designation }}</td>
+        <td>{{emp.joined_on}}</td>
+        <td>{{emp.DOB}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
